@@ -1,0 +1,17 @@
+# PhysDial environment (generator, tokenizer, corpus, switch study, specialists, tables)
+torch>=2.4
+diffusers>=0.33        # WanTransformer3DModel, AutoencoderKLWan (Wan2.1)
+transformers>=4.49     # umT5 text encoder (UMT5EncoderModel)
+peft>=0.13             # optional LoRA / partial-training options
+safetensors
+huggingface_hub
+accelerate
+sentencepiece
+numpy
+scipy
+h5py
+matplotlib
+pyyaml
+# Baselines (separate environment recommended, see README):
+#   Walrus: its own repository and requirements (hydra-core, omegaconf, the_well)
+#   DPOT:   its own repository

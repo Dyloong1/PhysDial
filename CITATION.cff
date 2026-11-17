@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below."
+title: "PhysDial: Adapting Pretrained Video Models for PDE Simulation under Changing Physical Conditions"
+type: software
+license: MIT
+repository-code: "https://github.com/Dyloong1/PhysDial"
+date-released: 2026-11-17
+authors:
+  - family-names: Dai
+    given-names: Yilong
+    affiliation: The University of Alabama
+  - family-names: Sun
+    given-names: Yiming
+    affiliation: Rutgers University
+  - family-names: Chen
+    given-names: Shengyu
+    affiliation: University of Pittsburgh
+  - family-names: Gong
+    given-names: Jiaqi
+    affiliation: The University of Alabama
+  - family-names: Jia
+    given-names: Xiaowei
+    affiliation: Rutgers University
+  - family-names: Yu
+    given-names: Runlong
+    affiliation: The University of Alabama
+keywords:
+  - PDE simulation
+  - video diffusion models
+  - scientific machine learning
+  - turbulence

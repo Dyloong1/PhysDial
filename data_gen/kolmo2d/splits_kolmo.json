@@ -1,0 +1,298 @@
+{
+ "n_nu": 12,
+ "all_nu_sorted": [
+  0.0001,
+  0.0001519911,
+  0.000231013,
+  0.0003511192,
+  0.0005336699,
+  0.0008111308,
+  0.001232847,
+  0.001873817,
+  0.002848036,
+  0.004328761,
+  0.006579332,
+  0.01
+ ],
+ "kf_values": [
+  2,
+  3,
+  4,
+  6
+ ],
+ "amp_values": [
+  0.5,
+  1.0
+ ],
+ "traj_fractions_train_files": {
+  "train": 0.8333333333333334,
+  "val": 0.08333333333333333,
+  "test": 0.08333333333333333
+ },
+ "hull_log10_nu": [
+  -3.4545454216708906,
+  -2.7272728252790484
+ ],
+ "train": {
+  "forcing_kf_amp": [
+   [
+    2,
+    1.0
+   ],
+   [
+    4,
+    1.0
+   ]
+  ],
+  "nu_idx": [
+   3,
+   4,
+   6,
+   7
+  ],
+  "nu": [
+   0.0003511192,
+   0.0005336699,
+   0.001232847,
+   0.001873817
+  ],
+  "n_files": 8,
+  "files": [
+   "h5/kf2_amp1.0/2D_kolmogorov_nu=0.0003511192.h5",
+   "h5/kf2_amp1.0/2D_kolmogorov_nu=0.0005336699.h5",
+   "h5/kf2_amp1.0/2D_kolmogorov_nu=0.001232847.h5",
+   "h5/kf2_amp1.0/2D_kolmogorov_nu=0.001873817.h5",
+   "h5/kf4_amp1.0/2D_kolmogorov_nu=0.0003511192.h5",
+   "h5/kf4_amp1.0/2D_kolmogorov_nu=0.0005336699.h5",
+   "h5/kf4_amp1.0/2D_kolmogorov_nu=0.001232847.h5",
+   "h5/kf4_amp1.0/2D_kolmogorov_nu=0.001873817.h5"
+  ]
+ },
+ "interp_nu": {
+  "forcing_kf_amp": [
+   [
+    2,
+    1.0
+   ],
+   [
+    4,
+    1.0
+   ]
+  ],
+  "nu_idx": [
+   5
+  ],
+  "nu": [
+   0.0008111308
+  ],
+  "n_files": 2,
+  "files": [
+   "h5/kf2_amp1.0/2D_kolmogorov_nu=0.0008111308.h5",
+   "h5/kf4_amp1.0/2D_kolmogorov_nu=0.0008111308.h5"
+  ]
+ },
+ "extrap_nu_low": {
+  "forcing_kf_amp": [
+   [
+    2,
+    1.0
+   ],
+   [
+    4,
+    1.0
+   ]
+  ],
+  "nu_idx": [
+   0,
+   1,
+   2
+  ],
+  "nu": [
+   0.0001,
+   0.0001519911,
+   0.000231013
+  ],
+  "n_files": 6,
+  "files": [
+   "h5/kf2_amp1.0/2D_kolmogorov_nu=0.0001.h5",
+   "h5/kf2_amp1.0/2D_kolmogorov_nu=0.0001519911.h5",
+   "h5/kf2_amp1.0/2D_kolmogorov_nu=0.000231013.h5",
+   "h5/kf4_amp1.0/2D_kolmogorov_nu=0.0001.h5",
+   "h5/kf4_amp1.0/2D_kolmogorov_nu=0.0001519911.h5",
+   "h5/kf4_amp1.0/2D_kolmogorov_nu=0.000231013.h5"
+  ]
+ },
+ "extrap_nu_high": {
+  "forcing_kf_amp": [
+   [
+    2,
+    1.0
+   ],
+   [
+    4,
+    1.0
+   ]
+  ],
+  "nu_idx": [
+   8,
+   9,
+   10,
+   11
+  ],
+  "nu": [
+   0.002848036,
+   0.004328761,
+   0.006579332,
+   0.01
+  ],
+  "n_files": 8,
+  "files": [
+   "h5/kf2_amp1.0/2D_kolmogorov_nu=0.002848036.h5",
+   "h5/kf2_amp1.0/2D_kolmogorov_nu=0.004328761.h5",
+   "h5/kf2_amp1.0/2D_kolmogorov_nu=0.006579332.h5",
+   "h5/kf2_amp1.0/2D_kolmogorov_nu=0.01.h5",
+   "h5/kf4_amp1.0/2D_kolmogorov_nu=0.002848036.h5",
+   "h5/kf4_amp1.0/2D_kolmogorov_nu=0.004328761.h5",
+   "h5/kf4_amp1.0/2D_kolmogorov_nu=0.006579332.h5",
+   "h5/kf4_amp1.0/2D_kolmogorov_nu=0.01.h5"
+  ]
+ },
+ "interp_kf": {
+  "forcing_kf_amp": [
+   [
+    3,
+    1.0
+   ]
+  ],
+  "nu_idx": [
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "nu": [
+   0.0003511192,
+   0.0005336699,
+   0.0008111308,
+   0.001232847,
+   0.001873817
+  ],
+  "n_files": 5,
+  "files": [
+   "h5/kf3_amp1.0/2D_kolmogorov_nu=0.0003511192.h5",
+   "h5/kf3_amp1.0/2D_kolmogorov_nu=0.0005336699.h5",
+   "h5/kf3_amp1.0/2D_kolmogorov_nu=0.0008111308.h5",
+   "h5/kf3_amp1.0/2D_kolmogorov_nu=0.001232847.h5",
+   "h5/kf3_amp1.0/2D_kolmogorov_nu=0.001873817.h5"
+  ]
+ },
+ "extrap_kf": {
+  "forcing_kf_amp": [
+   [
+    6,
+    1.0
+   ]
+  ],
+  "nu_idx": [
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "nu": [
+   0.0003511192,
+   0.0005336699,
+   0.0008111308,
+   0.001232847,
+   0.001873817
+  ],
+  "n_files": 5,
+  "files": [
+   "h5/kf6_amp1.0/2D_kolmogorov_nu=0.0003511192.h5",
+   "h5/kf6_amp1.0/2D_kolmogorov_nu=0.0005336699.h5",
+   "h5/kf6_amp1.0/2D_kolmogorov_nu=0.0008111308.h5",
+   "h5/kf6_amp1.0/2D_kolmogorov_nu=0.001232847.h5",
+   "h5/kf6_amp1.0/2D_kolmogorov_nu=0.001873817.h5"
+  ]
+ },
+ "extrap_amp": {
+  "forcing_kf_amp": [
+   [
+    2,
+    0.5
+   ],
+   [
+    4,
+    0.5
+   ]
+  ],
+  "nu_idx": [
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "nu": [
+   0.0003511192,
+   0.0005336699,
+   0.0008111308,
+   0.001232847,
+   0.001873817
+  ],
+  "n_files": 10,
+  "files": [
+   "h5/kf2_amp0.5/2D_kolmogorov_nu=0.0003511192.h5",
+   "h5/kf2_amp0.5/2D_kolmogorov_nu=0.0005336699.h5",
+   "h5/kf2_amp0.5/2D_kolmogorov_nu=0.0008111308.h5",
+   "h5/kf2_amp0.5/2D_kolmogorov_nu=0.001232847.h5",
+   "h5/kf2_amp0.5/2D_kolmogorov_nu=0.001873817.h5",
+   "h5/kf4_amp0.5/2D_kolmogorov_nu=0.0003511192.h5",
+   "h5/kf4_amp0.5/2D_kolmogorov_nu=0.0005336699.h5",
+   "h5/kf4_amp0.5/2D_kolmogorov_nu=0.0008111308.h5",
+   "h5/kf4_amp0.5/2D_kolmogorov_nu=0.001232847.h5",
+   "h5/kf4_amp0.5/2D_kolmogorov_nu=0.001873817.h5"
+  ]
+ },
+ "extrap_joint": {
+  "forcing_kf_amp": [
+   [
+    3,
+    0.5
+   ],
+   [
+    6,
+    0.5
+   ]
+  ],
+  "nu_idx": [
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "nu": [
+   0.0003511192,
+   0.0005336699,
+   0.0008111308,
+   0.001232847,
+   0.001873817
+  ],
+  "n_files": 10,
+  "files": [
+   "h5/kf3_amp0.5/2D_kolmogorov_nu=0.0003511192.h5",
+   "h5/kf3_amp0.5/2D_kolmogorov_nu=0.0005336699.h5",
+   "h5/kf3_amp0.5/2D_kolmogorov_nu=0.0008111308.h5",
+   "h5/kf3_amp0.5/2D_kolmogorov_nu=0.001232847.h5",
+   "h5/kf3_amp0.5/2D_kolmogorov_nu=0.001873817.h5",
+   "h5/kf6_amp0.5/2D_kolmogorov_nu=0.0003511192.h5",
+   "h5/kf6_amp0.5/2D_kolmogorov_nu=0.0005336699.h5",
+   "h5/kf6_amp0.5/2D_kolmogorov_nu=0.0008111308.h5",
+   "h5/kf6_amp0.5/2D_kolmogorov_nu=0.001232847.h5",
+   "h5/kf6_amp0.5/2D_kolmogorov_nu=0.001873817.h5"
+  ]
+ }
+}

@@ -1,0 +1,34 @@
+# Conditional Walrus: copy of physdial/baselines/walrus/cfg/data/physdial_corpus.yaml in which the Kolmogorov datasets are the export
+# with the constant condition fields of wcond.py (walrus_cond_data.py); every other dataset, and the dataset order (field map), unchanged.
+# The Well families are read from their published directories with the held-out conditions of corpus.py excluded (file-name filters;
+# they also apply to the valid and test splits); our own families and the strided copies are written by physdial/walrus_data.py
+# (vorticity families as velocity). Paths: $PHYSDIAL_DATA_ROOT (own data and exports), $PHYSDIAL_EXT_DATA (The Well).
+defaults:
+- field_index_map_override: bc_only_override
+well_base_path: "${oc.env:PHYSDIAL_EXT_DATA}/the_well/"
+wandb_data_name: physdial_cond_corpus
+module_parameters:
+  _target_: walrus.data.MixedWellDataModule
+  batch_size: 2
+  n_steps_input: 6
+  n_steps_output: 1
+  min_dt_stride: 1
+  max_dt_stride: 1
+  max_samples: 2000
+  well_dataset_info:
+    # rayleigh_benard (initial-condition split) and acoustic are corpus-split copies written by walrus_data.py under The Well's
+    # dataset names; held-out conditions and evaluation initial conditions are not in them
+    rayleigh_benard: {include_filters: [], exclude_filters: [], path: "${oc.env:PHYSDIAL_DATA_ROOT}/walrus/datasets/rayleigh_benard"}
+    # shear_flow and gray_scott use per-family strides 8 and 16 (corpus.STRIDE): strided copies written by walrus_data.py, held-out
+    # conditions already excluded there; Walrus has no per-dataset stride.
+    physdial_sf_s8: {include_filters: [], exclude_filters: [], path: "${oc.env:PHYSDIAL_DATA_ROOT}/walrus/datasets/physdial_sf_s8"}
+    physdial_gs_s16: {include_filters: [], exclude_filters: [], path: "${oc.env:PHYSDIAL_DATA_ROOT}/walrus/datasets/physdial_gs_s16"}
+    turbulent_radiative_layer_2D: {include_filters: [], exclude_filters: [tcool_3.16, tcool_0.32]}
+    physdial_kolmo_r256: {include_filters: [], exclude_filters: [], path: "${oc.env:PHYSDIAL_DATA_ROOT}/switch/walrus/datasets/physdial_kolmo_r256"}
+    physdial_kolmo_r512: {include_filters: [], exclude_filters: [], path: "${oc.env:PHYSDIAL_DATA_ROOT}/switch/walrus/datasets/physdial_kolmo_r512"}
+    # decaying turbulence (own data) on 256^2 / 512^2 (by nu), one Walrus dataset per grid like Kolmogorov
+    physdial_nsu_r256: {include_filters: [], exclude_filters: [], path: "${oc.env:PHYSDIAL_DATA_ROOT}/walrus/datasets/physdial_nsu_r256"}
+    physdial_nsu_r512: {include_filters: [], exclude_filters: [], path: "${oc.env:PHYSDIAL_DATA_ROOT}/walrus/datasets/physdial_nsu_r512"}
+    # euler uses stride 2 (corpus.STRIDE) -> strided copy; acoustic (stride 1) is a corpus-split copy (above)
+    physdial_euler_s2: {include_filters: [], exclude_filters: [], path: "${oc.env:PHYSDIAL_DATA_ROOT}/walrus/datasets/physdial_euler_s2"}
+    acoustic_scattering_inclusions: {include_filters: [], exclude_filters: [], path: "${oc.env:PHYSDIAL_DATA_ROOT}/walrus/datasets/acoustic_scattering_inclusions"}

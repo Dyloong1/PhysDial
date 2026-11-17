@@ -1,0 +1,205 @@
+{
+ "_doc": "Evaluation switch groups for Kolmogorov flow. A = condition of the history (always a training value of PhysDial), B = condition from the switch on. 'cls' is relative to PhysDial's training set: in = B is a training value (nu 3.51e-4 / 5.34e-4 / 1.23e-3 / 1.87e-3 x k_f 2 / 4 x amp 1, anchors amp 0.7 / 1.4, random multi-mode band 2-5), out = B is a held-out value of the corpus. N = solver grid (max of est_N(A), est_N(B) unless given). forcing single = -amp k_f cos(k_f (y + phase)); multi = random multi-mode band kband, 4 modes, as kolmo_solver --forcing multi.",
+ "groups": [
+  {
+   "name": "amp_up_in",
+   "cls": "in",
+   "what": "amp",
+   "A": {
+    "nu": 0.0005336699,
+    "kf": 2,
+    "amp": 1.0,
+    "forcing": "single"
+   },
+   "B": {
+    "nu": 0.0005336699,
+    "kf": 2,
+    "amp": 1.4,
+    "forcing": "single"
+   },
+   "noise_seed": 75099,
+   "walrus_seed": 68559
+  },
+  {
+   "name": "amp_down_out",
+   "cls": "out",
+   "what": "amp",
+   "A": {
+    "nu": 0.0005336699,
+    "kf": 2,
+    "amp": 1.0,
+    "forcing": "single"
+   },
+   "B": {
+    "nu": 0.0005336699,
+    "kf": 2,
+    "amp": 0.5,
+    "forcing": "single"
+   },
+   "noise_seed": 44245,
+   "walrus_seed": 23086
+  },
+  {
+   "name": "kf_in",
+   "cls": "in",
+   "what": "kf",
+   "A": {
+    "nu": 0.0005336699,
+    "kf": 2,
+    "amp": 1.0,
+    "forcing": "single"
+   },
+   "B": {
+    "nu": 0.0005336699,
+    "kf": 4,
+    "amp": 1.0,
+    "forcing": "single"
+   },
+   "noise_seed": 70694,
+   "walrus_seed": 62256
+  },
+  {
+   "name": "kf_out",
+   "cls": "out",
+   "what": "kf",
+   "A": {
+    "nu": 0.0005336699,
+    "kf": 2,
+    "amp": 1.0,
+    "forcing": "single"
+   },
+   "B": {
+    "nu": 0.0005336699,
+    "kf": 6,
+    "amp": 1.0,
+    "forcing": "single"
+   },
+   "noise_seed": 50194,
+   "walrus_seed": 61844
+  },
+  {
+   "name": "nu_up_in",
+   "cls": "in",
+   "what": "nu",
+   "A": {
+    "nu": 0.0005336699,
+    "kf": 2,
+    "amp": 1.0,
+    "forcing": "single"
+   },
+   "B": {
+    "nu": 0.001873817,
+    "kf": 2,
+    "amp": 1.0,
+    "forcing": "single"
+   },
+   "noise_seed": 61655,
+   "walrus_seed": 50470
+  },
+  {
+   "name": "nu_down_in",
+   "cls": "in",
+   "what": "nu",
+   "A": {
+    "nu": 0.001873817,
+    "kf": 2,
+    "amp": 1.0,
+    "forcing": "single"
+   },
+   "B": {
+    "nu": 0.0003511192,
+    "kf": 2,
+    "amp": 1.0,
+    "forcing": "single"
+   },
+   "noise_seed": 97771,
+   "walrus_seed": 29768
+  },
+  {
+   "name": "nu_up_out",
+   "cls": "out",
+   "what": "nu",
+   "A": {
+    "nu": 0.0005336699,
+    "kf": 2,
+    "amp": 1.0,
+    "forcing": "single"
+   },
+   "B": {
+    "nu": 0.006579332,
+    "kf": 2,
+    "amp": 1.0,
+    "forcing": "single"
+   },
+   "noise_seed": 90725,
+   "walrus_seed": 44838
+  },
+  {
+   "name": "nu_down_out",
+   "cls": "out",
+   "what": "nu",
+   "A": {
+    "nu": 0.0005336699,
+    "kf": 2,
+    "amp": 1.0,
+    "forcing": "single"
+   },
+   "B": {
+    "nu": 0.0001,
+    "kf": 2,
+    "amp": 1.0,
+    "forcing": "single"
+   },
+   "noise_seed": 44221,
+   "walrus_seed": 42089
+  },
+  {
+   "name": "shape_in",
+   "cls": "in",
+   "what": "shape",
+   "A": {
+    "nu": 0.0005336699,
+    "kf": 4,
+    "amp": 1.0,
+    "forcing": "single"
+   },
+   "B": {
+    "nu": 0.0005336699,
+    "amp": 1.0,
+    "forcing": "multi",
+    "kband": [
+     2,
+     5
+    ]
+   },
+   "noise_seed": 92591,
+   "walrus_seed": 19140
+  },
+  {
+   "name": "shape_out",
+   "cls": "out",
+   "what": "shape",
+   "A": {
+    "nu": 0.0005336699,
+    "amp": 1.0,
+    "forcing": "multi",
+    "kband": [
+     2,
+     5
+    ]
+   },
+   "B": {
+    "nu": 0.0005336699,
+    "amp": 1.0,
+    "forcing": "multi",
+    "kband": [
+     6,
+     7
+    ]
+   },
+   "N": 512,
+   "noise_seed": 56837,
+   "walrus_seed": 13508
+  }
+ ]
+}

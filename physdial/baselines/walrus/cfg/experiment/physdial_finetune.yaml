@@ -1,0 +1,10 @@
+# @package _global_
+# Fine-tune from the released Walrus checkpoint (polymathic-ai/walrus), downloaded to $WALRUS_CKPT_DIR.
+auto_resume: True
+finetune: True
+folder_override: ""
+checkpoint_override: ""
+config_override: ${oc.env:WALRUS_CKPT_DIR}/extended_config.yaml
+validation_mode: False
+frozen_components:
+  - model

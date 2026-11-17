@@ -1,0 +1,208 @@
+{
+ "_doc": "Multi-switch groups for Kolmogorov flow. seq[0] = C0, the condition of the history (stored frames 0..10); seq[1..K] = the conditions of the K segments after the history (K = 4, ms_amp 2), each seg_steps model steps (2 stored frames each); every condition is a training value / combination of PhysDial's training set and of the switch training groups (groups_kolmo_train.json: nu 3.51e-4 / 5.34e-4 / 1.23e-3 / 1.87e-3 x k_f 2 / 4 x amp 0.7 / 1.0 / 1.4; random multi-mode band 2-5 at amp 1.0 and nu 5.34e-4 / 1.23e-3). Multi-mode conditions draw their own 4 modes per trajectory and segment (ms_action: a new forcing pattern every segment, like a control action that changes every control interval). 'primary' = the statistic the tracking error is read on (ke = kinetic energy, ens = enstrophy, proj = projection of the flow on the current segment's forcing). ms_amp has 2 segments of 32 steps (its energy relaxes on the slow drag time scale); ms_nu reads enstrophy; a group may set its own seg_steps (K x seg_steps = 64).",
+ "seg_steps": 16,
+ "groups": [
+  {
+   "name": "ms_amp",
+   "what": "amp",
+   "primary": "ke",
+   "seq": [
+    {
+     "nu": 0.0005336699,
+     "kf": 2,
+     "amp": 1.0,
+     "forcing": "single"
+    },
+    {
+     "nu": 0.0005336699,
+     "kf": 2,
+     "amp": 1.4,
+     "forcing": "single"
+    },
+    {
+     "nu": 0.0005336699,
+     "kf": 2,
+     "amp": 0.7,
+     "forcing": "single"
+    }
+   ],
+   "seg_steps": 32,
+   "noise_seed": 39283,
+   "walrus_seed": 12316
+  },
+  {
+   "name": "ms_kf",
+   "what": "kf",
+   "primary": "proj",
+   "seq": [
+    {
+     "nu": 0.0005336699,
+     "kf": 2,
+     "amp": 1.0,
+     "forcing": "single"
+    },
+    {
+     "nu": 0.0005336699,
+     "kf": 4,
+     "amp": 1.0,
+     "forcing": "single"
+    },
+    {
+     "nu": 0.0005336699,
+     "kf": 2,
+     "amp": 1.0,
+     "forcing": "single"
+    },
+    {
+     "nu": 0.0005336699,
+     "kf": 4,
+     "amp": 1.0,
+     "forcing": "single"
+    },
+    {
+     "nu": 0.0005336699,
+     "kf": 2,
+     "amp": 1.0,
+     "forcing": "single"
+    }
+   ],
+   "noise_seed": 10774,
+   "walrus_seed": 16784
+  },
+  {
+   "name": "ms_nu",
+   "what": "nu",
+   "primary": "ens",
+   "seq": [
+    {
+     "nu": 0.0005336699,
+     "kf": 2,
+     "amp": 1.0,
+     "forcing": "single"
+    },
+    {
+     "nu": 0.001873817,
+     "kf": 2,
+     "amp": 1.0,
+     "forcing": "single"
+    },
+    {
+     "nu": 0.0003511192,
+     "kf": 2,
+     "amp": 1.0,
+     "forcing": "single"
+    },
+    {
+     "nu": 0.001232847,
+     "kf": 2,
+     "amp": 1.0,
+     "forcing": "single"
+    },
+    {
+     "nu": 0.0005336699,
+     "kf": 2,
+     "amp": 1.0,
+     "forcing": "single"
+    }
+   ],
+   "noise_seed": 51416,
+   "walrus_seed": 69860
+  },
+  {
+   "name": "ms_action",
+   "what": "shape",
+   "primary": "proj",
+   "seq": [
+    {
+     "nu": 0.0005336699,
+     "amp": 1.0,
+     "forcing": "multi",
+     "kband": [
+      2,
+      5
+     ]
+    },
+    {
+     "nu": 0.0005336699,
+     "amp": 1.0,
+     "forcing": "multi",
+     "kband": [
+      2,
+      5
+     ]
+    },
+    {
+     "nu": 0.0005336699,
+     "amp": 1.0,
+     "forcing": "multi",
+     "kband": [
+      2,
+      5
+     ]
+    },
+    {
+     "nu": 0.0005336699,
+     "amp": 1.0,
+     "forcing": "multi",
+     "kband": [
+      2,
+      5
+     ]
+    },
+    {
+     "nu": 0.0005336699,
+     "amp": 1.0,
+     "forcing": "multi",
+     "kband": [
+      2,
+      5
+     ]
+    }
+   ],
+   "noise_seed": 63831,
+   "walrus_seed": 27048
+  },
+  {
+   "name": "ms_mixed",
+   "what": "mixed",
+   "primary": "proj",
+   "seq": [
+    {
+     "nu": 0.0005336699,
+     "kf": 2,
+     "amp": 1.0,
+     "forcing": "single"
+    },
+    {
+     "nu": 0.0005336699,
+     "kf": 4,
+     "amp": 1.0,
+     "forcing": "single"
+    },
+    {
+     "nu": 0.0005336699,
+     "kf": 4,
+     "amp": 1.4,
+     "forcing": "single"
+    },
+    {
+     "nu": 0.001232847,
+     "kf": 4,
+     "amp": 1.4,
+     "forcing": "single"
+    },
+    {
+     "nu": 0.001232847,
+     "amp": 1.0,
+     "forcing": "multi",
+     "kband": [
+      2,
+      5
+     ]
+    }
+   ],
+   "noise_seed": 4533,
+   "walrus_seed": 53821
+  }
+ ]
+}

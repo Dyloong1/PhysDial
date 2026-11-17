@@ -1,0 +1,8 @@
+_target_: walrus.trainer.checkpoints.CheckPointer
+save_dir: checkpoints/${name}
+load_checkpoint_path: null
+coalesced_checkpoint_path: ${oc.env:WALRUS_CKPT_DIR}/walrus.pt
+save_best: True
+checkpoint_frequency: 2   # bounded loss when a job is interrupted (auto_resume)
+align_fields: True
+load_chkpt_after_finetuning_expansion: False

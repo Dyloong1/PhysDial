@@ -1,0 +1,31 @@
+# Walrus's in-range reference, stage 1: as physdial_corpus.yaml with the Kolmogorov datasets replaced by the reference export (walrus_data --families
+# kolmo --kolmo_extra drag,beta --reference --no_anchors: the train split plus every ref_* split, the drag and beta groups included, no anchors);
+# everything else, and the dataset order (field map), as physdial_corpus.yaml.
+# Walrus fine-tuning data: the corpus of the eight families (group `data`, like walrus/configs/data/*.yaml). The Well families are read from their
+# published directories with the held-out conditions of corpus.py excluded (file-name filters; they also apply to the valid and test
+# splits); the own families (Kolmogorov, NSU; vorticity families as velocity) and the strided / corpus-split copies come from walrus_data.py.
+# Paths: ${PHYSDIAL_EXT_DATA}/the_well (public data), ${PHYSDIAL_DATA_ROOT}/walrus/datasets (walrus_data.py exports).
+defaults:
+- field_index_map_override: bc_only_override
+well_base_path: ${oc.env:PHYSDIAL_EXT_DATA}/the_well/
+wandb_data_name: physdial_corpus_ref
+module_parameters:
+  _target_: walrus.data.MixedWellDataModule
+  batch_size: 2
+  n_steps_input: 6
+  n_steps_output: 1
+  min_dt_stride: 1
+  max_dt_stride: 1
+  max_samples: 2000
+  well_dataset_info:
+    # rayleigh_benard and acoustic: corpus-split copies under The Well's dataset names; shear_flow / gray_scott / euler: strided copies (corpus.STRIDE)
+    rayleigh_benard: {include_filters: [], exclude_filters: [], path: "${oc.env:PHYSDIAL_DATA_ROOT}/walrus/datasets/rayleigh_benard"}
+    physdial_sf_s8: {include_filters: [], exclude_filters: [], path: "${oc.env:PHYSDIAL_DATA_ROOT}/walrus/datasets/physdial_sf_s8"}
+    physdial_gs_s16: {include_filters: [], exclude_filters: [], path: "${oc.env:PHYSDIAL_DATA_ROOT}/walrus/datasets/physdial_gs_s16"}
+    turbulent_radiative_layer_2D: {include_filters: [], exclude_filters: [tcool_3.16, tcool_0.32]}
+    physdial_kolmo_ref_r256: {include_filters: [], exclude_filters: [], path: "${oc.env:PHYSDIAL_DATA_ROOT}/walrus/datasets/physdial_kolmo_ref_r256"}
+    physdial_kolmo_ref_r512: {include_filters: [], exclude_filters: [], path: "${oc.env:PHYSDIAL_DATA_ROOT}/walrus/datasets/physdial_kolmo_ref_r512"}
+    physdial_nsu_r256: {include_filters: [], exclude_filters: [], path: "${oc.env:PHYSDIAL_DATA_ROOT}/walrus/datasets/physdial_nsu_r256"}
+    physdial_nsu_r512: {include_filters: [], exclude_filters: [], path: "${oc.env:PHYSDIAL_DATA_ROOT}/walrus/datasets/physdial_nsu_r512"}
+    physdial_euler_s2: {include_filters: [], exclude_filters: [], path: "${oc.env:PHYSDIAL_DATA_ROOT}/walrus/datasets/physdial_euler_s2"}
+    acoustic_scattering_inclusions: {include_filters: [], exclude_filters: [], path: "${oc.env:PHYSDIAL_DATA_ROOT}/walrus/datasets/acoustic_scattering_inclusions"}
